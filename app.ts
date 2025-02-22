@@ -64,13 +64,14 @@ createBtn.onclick = function (): void {
 
 // задал класс для функции
 class FunClick{
-    target: EventTarget;
+    target: EventTarget; //элемент на котором произашло действие
     index: number;
     type: string;
 }
 //event - содержит информацию о событии клика, MouseEvent - указывает, что это событие связано с мышкой
 
 listElement.onclick = function (event: MouseEvent): Function {
+    // target типизирован, так как на него происходит действие.
     const target = event.target as HTMLElement;
     const index: number = parseInt(target.dataset.index || '', 10);
     const type: string = target.dataset.type;
